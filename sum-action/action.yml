@@ -1,0 +1,15 @@
+name: "Sum Two Numbers"
+description: "A GitHub Action that sums two numbers"
+inputs:
+  num1:
+    description: "First number"
+    required: true
+  num2:
+    description: "Second number"
+    required: true
+outputs:
+  result:
+    description: "The sum of the numbers"
+runs:
+  using: "node20"
+  main: "dist/index.js"  # This must match your compiled file

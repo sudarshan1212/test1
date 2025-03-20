@@ -1,0 +1,19 @@
+{
+  "name": "sum-action",
+  "version": "1.0.0",
+  "description": "A GitHub Action to add two numbers",
+  "main": "sum.js",
+  "scripts": {
+    "start": "node sum.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
+  }
+}
