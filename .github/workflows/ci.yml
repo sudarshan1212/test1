@@ -1,0 +1,35 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run_sum:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Sum Action
+        id: sum_step
+        uses: ./sum-action  # Must match the folder containing `action.yml`
+        with:
+          num1: 150
+          num2: 10
+
+      - name: Output Sum
+        run: echo "The sum is ${{ steps.sum_step.outputs.result }}"
